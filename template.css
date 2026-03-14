@@ -1,0 +1,99 @@
+@page {
+    size: A4;
+    margin: 1mm 2mm 1mm 2mm;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Songti SC', 'STSong', 'PingFang SC', 'Noto Sans SC', serif;
+    font-size: 8px;
+    line-height: 1.1;
+    color: #1a1a1a;
+    columns: 2;
+    column-gap: 5px;
+    column-rule: 0.4px solid #ccc;
+}
+
+/* 大章标题 - 蓝色色块，跨全栏 */
+h3 {
+    background: #1d4ed8;
+    color: #fff;
+    font-size: 8.5px;
+    padding: 0.5px 3px;
+    margin-top: 1.5px;
+    margin-bottom: 0.3px;
+    border-radius: 1px;
+    break-after: avoid;
+    column-span: all;
+}
+
+/* 小节标题 - 左边框 */
+h4 {
+    font-size: 8px;
+    color: #1e40af;
+    border-left: 1.5px solid #2563eb;
+    padding-left: 2px;
+    margin-top: 1px;
+    margin-bottom: 0.2px;
+    background: #eff6ff;
+    break-after: avoid;
+}
+
+/* 关键词红色高亮 */
+strong {
+    color: #b91c1c;
+}
+
+/* 列表极限压缩 */
+ul, ol {
+    padding-left: 10px;
+}
+
+li {
+    margin-bottom: 0;
+}
+
+ol ol, ul ul, ol ul, ul ol {
+    padding-left: 7px;
+}
+
+/* 段落零间距 */
+p {
+    margin-bottom: 0;
+}
+
+/* 隐藏冗余大标题（h1/h2 用于 markdown 结构但不占空间）*/
+h1, h2 {
+    font-size: 0;
+    line-height: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+/* 表格 */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 7.5px;
+    margin: 0.5px 0;
+}
+
+th, td {
+    border: 0.3px solid #94a3b8;
+    padding: 0.3px 1.5px;
+}
+
+th {
+    background: #dbeafe;
+}
+
+/* 打印优化 */
+@media print {
+    body { columns: 2; }
+    h3, h4, li, p { break-inside: avoid; }
+}
